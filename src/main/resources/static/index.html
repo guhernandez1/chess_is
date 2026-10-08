@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajedrez TPO · Motor Java con Arquitectura Hexagonal</title>
+    <meta name="description" content="Jugá ajedrez contra un amigo en un motor escrito en Java puro (arquitectura hexagonal, patrón Strategy) expuesto con Spring Boot.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+</div>
+
+<header class="app-header">
+    <div class="brand">
+        <span class="brand-logo" aria-hidden="true">♞</span>
+        <div>
+            <h1 class="brand-title">Ajedrez <span class="gradient-text">TPO</span></h1>
+            <p class="brand-subtitle">Núcleo Java puro · Adaptador Spring Boot</p>
+        </div>
+    </div>
+    <div class="header-actions">
+        <button id="flip-btn" class="btn btn-ghost" type="button" title="Girar tablero (F)">
+            <span aria-hidden="true">⟲</span> Girar
+        </button>
+        <button id="reset-btn" class="btn btn-primary" type="button">
+            <span aria-hidden="true">＋</span> Nueva partida
+        </button>
+    </div>
+</header>
+
+<main class="layout">
+    <section class="board-section" aria-label="Tablero">
+        <div class="player-bar" id="player-top">
+            <div class="player">
+                <span class="player-avatar black" aria-hidden="true">♚</span>
+                <span class="player-name" id="name-top">Negras</span>
+            </div>
+            <div class="captured" id="captured-top"></div>
+        </div>
+
+        <div class="board-frame">
+            <div id="board" class="board" role="grid" aria-label="Tablero de ajedrez"></div>
+            <div id="game-over" class="game-over hidden" role="dialog" aria-modal="true" aria-labelledby="game-over-title">
+                <div class="game-over-card">
+                    <div class="game-over-icon" id="game-over-icon">♚</div>
+                    <h2 id="game-over-title">Jaque mate</h2>
+                    <p id="game-over-text">Ganan las negras</p>
+                    <button id="play-again-btn" class="btn btn-primary" type="button">Jugar otra vez</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="player-bar" id="player-bottom">
+            <div class="player">
+                <span class="player-avatar white" aria-hidden="true">♔</span>
+                <span class="player-name" id="name-bottom">Blancas</span>
+            </div>
+            <div class="captured" id="captured-bottom"></div>
+        </div>
+    </section>
+
+    <aside class="sidebar">
+        <div class="card status-card">
+            <div class="card-label">Turno</div>
+            <div class="turn-row">
+                <span id="turn-dot" class="turn-dot white"></span>
+                <span id="turn-text" class="turn-text">Blancas</span>
+                <span id="status-badge" class="badge badge-neutral">En juego</span>
+            </div>
+            <p id="hint" class="hint">Tocá una pieza para ver sus movimientos legales.</p>
+        </div>
+
+        <div class="card history-card">
+            <div class="card-header">
+                <div class="card-label">Historial</div>
+                <span id="move-count" class="chip">0 jugadas</span>
+            </div>
+            <ol id="history" class="history"></ol>
+            <p id="history-empty" class="empty">Todavía no hay jugadas.</p>
+        </div>
+
+        <div class="card arch-card">
+            <div class="card-label">Arquitectura</div>
+            <ul class="arch-list">
+                <li><span class="arch-dot core"></span><code>core</code> Java puro · Strategy</li>
+                <li><span class="arch-dot adapter"></span><code>adapter</code> REST · Spring Boot</li>
+                <li><span class="arch-dot config"></span><code>config</code> @Bean del núcleo</li>
+            </ul>
+        </div>
+    </aside>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
