@@ -1,6 +1,9 @@
 # Ajedrez TPO — Java + Spring Boot (Arquitectura Hexagonal)
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
+[![Jugar Online](https://img.shields.io/badge/🎮%20JUGAR%20ONLINE-chess--is.onrender.com-success?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chess-is.onrender.com)
+[![Status](https://img.shields.io/badge/Status-Online%20en%20Render-blue?style=for-the-badge)](https://chess-is.onrender.com)
+
+> ♟️ **Demo en vivo:** Podés jugar directamente desde el navegador ingresando a **[https://chess-is.onrender.com](https://chess-is.onrender.com)**.
 
 Diseño completo y justificaciones: ver [implementation_plan.md](implementation_plan.md).
 
