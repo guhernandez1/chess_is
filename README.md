@@ -1,5 +1,7 @@
 # Ajedrez TPO — Java + Spring Boot (Arquitectura Hexagonal)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
+
 Diseño completo y justificaciones: ver [implementation_plan.md](implementation_plan.md).
 
 ## Requisitos
