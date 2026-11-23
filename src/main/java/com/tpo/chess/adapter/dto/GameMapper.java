@@ -12,9 +12,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Traduce entre el modelo del dominio y los DTOs/notación algebraica.
- */
+
 public final class GameMapper {
 
     private GameMapper() {

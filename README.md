@@ -5,8 +5,6 @@
 
 > ♟️ **Demo en vivo:** Podés jugar directamente desde el navegador ingresando a **[https://chess-is.onrender.com](https://chess-is.onrender.com)**.
 
-Diseño completo y justificaciones: ver [implementation_plan.md](implementation_plan.md).
-
 ## Requisitos
 - JDK 17+ (no hace falta instalar Maven: se usa el wrapper `mvnw`).
 

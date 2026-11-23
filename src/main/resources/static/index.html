@@ -3,26 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajedrez TPO · Motor Java con Arquitectura Hexagonal</title>
+    <title>Ajedrez · TPO</title>
     <meta name="description" content="Jugá ajedrez contra un amigo en un motor escrito en Java puro (arquitectura hexagonal, patrón Strategy) expuesto con Spring Boot.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="bg-orbs" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-</div>
-
 <header class="app-header">
     <div class="brand">
         <span class="brand-logo" aria-hidden="true">♞</span>
         <div>
-            <h1 class="brand-title">Ajedrez <span class="gradient-text">TPO</span></h1>
-            <p class="brand-subtitle">Núcleo Java puro · Adaptador Spring Boot</p>
+            <h1 class="brand-title">Ajedrez <span class="brand-edition">TPO</span></h1>
+            <p class="brand-subtitle">Ingeniería de Software · UADE</p>
         </div>
     </div>
     <div class="header-actions">
@@ -86,16 +77,11 @@
             <p id="history-empty" class="empty">Todavía no hay jugadas.</p>
         </div>
 
-        <div class="card arch-card">
-            <div class="card-label">Arquitectura</div>
-            <ul class="arch-list">
-                <li><span class="arch-dot core"></span><code>core</code> Java puro · Strategy</li>
-                <li><span class="arch-dot adapter"></span><code>adapter</code> REST · Spring Boot</li>
-                <li><span class="arch-dot config"></span><code>config</code> @Bean del núcleo</li>
-            </ul>
-        </div>
+
     </aside>
 </main>
+
+<footer class="project-note"><p>TPO · Ingeniería de Software</p></footer>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 

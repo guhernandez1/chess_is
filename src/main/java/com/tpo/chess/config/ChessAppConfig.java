@@ -6,8 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Único punto de contacto entre Spring y el núcleo: fabrica los objetos del dominio
- * como beans, manteniendo al paquete {@code core} libre de anotaciones del framework.
+ * Registra el dominio como beans sin introducir anotaciones de Spring en el núcleo.
  */
 @Configuration
 public class ChessAppConfig {

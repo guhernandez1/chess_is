@@ -11,10 +11,7 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * Valida la legalidad de las jugadas: filtra los movimientos pseudo-legales que dejarían
- * al propio rey en jaque y evalúa jaque, jaque mate y ahogado.
- *
- * <p>No tiene estado, por lo que una sola instancia puede compartirse.</p>
+ * Filtra movimientos que dejan al propio rey en jaque. No mantiene estado.
  */
 public class RuleValidator {
 
@@ -33,7 +30,6 @@ public class RuleValidator {
         return getLegalMoves(board, start).contains(end);
     }
 
-    /** @return {@code true} si el rey de {@code color} está atacado. */
     public boolean isInCheck(Board board, Color color) {
         Optional<Position> king = board.findKing(color);
         return king.isPresent() && isSquareAttacked(board, king.get(), color.opposite());
@@ -72,7 +68,6 @@ public class RuleValidator {
         return inCheck ? GameStatus.CHECK : GameStatus.IN_PROGRESS;
     }
 
-    /** Simula la jugada en una copia del tablero y verifica si el rey propio queda atacado. */
     private boolean wouldBeInCheck(Board board, Position start, Position end, Color color) {
         Board simulation = board.copy();
         simulation.movePiece(start, end);

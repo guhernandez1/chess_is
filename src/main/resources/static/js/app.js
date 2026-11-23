@@ -1,8 +1,4 @@
-/* =========================================================
-   Ajedrez TPO — cliente web del adaptador REST
-   Toda la lógica de reglas vive en el servidor (core Java);
-   este archivo solo dibuja el estado y envía jugadas.
-   ========================================================= */
+/* Cliente web del adaptador REST. */
 (() => {
     'use strict';
 
@@ -24,7 +20,6 @@
     let busy = false;
     const squareEls = new Map();
 
-    /* ---------------- HTTP ---------------- */
     async function api(path = '', options = {}) {
         const res = await fetch(API + path, {
             headers: { 'Content-Type': 'application/json' },
@@ -39,7 +34,6 @@
         return body;
     }
 
-    /* ---------------- Board construction ---------------- */
     function buildBoard() {
         boardEl.innerHTML = '';
         squareEls.clear();
@@ -73,7 +67,6 @@
         return span;
     }
 
-    /* ---------------- Rendering ---------------- */
     function render(animateMove = null) {
         if (!state) return;
         const pieces = new Map(state.pieces.map((p) => [p.square, p]));
@@ -110,7 +103,7 @@
         renderGameOver();
     }
 
-    /** Animación FLIP: la pieza "viaja" desde la casilla de origen a la de destino. */
+    // Conserva la posición de origen para animar la pieza tras actualizar el tablero.
     function animatePiece(from, to, fromRect) {
         const toEl = squareEls.get(to);
         const piece = toEl?.querySelector('.piece');
@@ -182,7 +175,7 @@
         $('name-' + slot).textContent = COLOR_ES[color];
         bar.classList.toggle('active', state.turn === color && !isFinished());
 
-        // Piezas que ESTE jugador capturó (son del color contrario).
+        // El historial registra la captura desde el punto de vista de quien movió.
         const captured = state.history.filter((m) => m.color === color && m.captured).map((m) => m.captured);
         captured.sort((a, b) => VALUE[b] - VALUE[a]);
         const material = (c) => state.pieces.filter((p) => p.color === c).reduce((s, p) => s + VALUE[p.type], 0);
@@ -231,7 +224,6 @@
         }
     }
 
-    /* ---------------- Interaction ---------------- */
     async function onSquareClick(square) {
         if (!state || busy || isFinished()) return;
 
@@ -313,7 +305,6 @@
         toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
     }
 
-    /* ---------------- Boot ---------------- */
     $('reset-btn').addEventListener('click', resetGame);
     $('play-again-btn').addEventListener('click', resetGame);
     $('flip-btn').addEventListener('click', flipBoard);

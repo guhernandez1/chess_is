@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Utilidad compartida para movimientos "deslizantes" (torre, alfil, reina, rey).
- * Se reutiliza por <b>delegación</b> en lugar de una clase base abstracta, para no
- * introducir herencia entre estrategias.
+ * Recorrido compartido por los movimientos lineales y diagonales.
  */
 final class RayCaster {
 
@@ -38,7 +36,7 @@ final class RayCaster {
                 if (piece.isEnemyOf(occupant)) {
                     moves.add(current);
                 }
-                break; // bloqueado
+                break;
             }
         }
         return moves;

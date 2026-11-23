@@ -1,8 +1,7 @@
 package com.tpo.chess.core.models;
 
 /**
- * Resultado detallado de intentar una jugada. Permite a los adaptadores explicar
- * por qué se rechazó un movimiento sin depender de excepciones.
+ * Motivo del rechazo de una jugada, sin recurrir a excepciones.
  */
 public enum MoveResult {
     SUCCESS,

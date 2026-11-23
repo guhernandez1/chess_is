@@ -9,7 +9,6 @@ public enum GameStatus {
     CHECKMATE,
     STALEMATE;
 
-    /** @return {@code true} si la partida terminó. */
     public boolean isFinished() {
         return this == CHECKMATE || this == STALEMATE;
     }

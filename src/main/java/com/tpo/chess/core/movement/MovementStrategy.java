@@ -7,11 +7,8 @@ import com.tpo.chess.core.models.Position;
 import java.util.List;
 
 /**
- * Estrategia de movimiento (patrón Strategy). Cada implementación encapsula UNA forma
- * de moverse; las piezas se arman combinando estrategias.
- *
- * <p>Contrato: devuelve movimientos pseudo-legales (dentro del tablero, respetando
- * bloqueos y sin capturar piezas propias). No evalúa jaques.</p>
+ * Devuelve movimientos pseudo-legales dentro del tablero, respetando bloqueos y sin capturar piezas propias.
+ * No evalúa si el rey queda en jaque.
  */
 public interface MovementStrategy {
 

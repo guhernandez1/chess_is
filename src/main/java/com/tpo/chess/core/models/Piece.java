@@ -9,13 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * Pieza de ajedrez. Es una única clase concreta (no hay {@code Pawn extends Piece}, etc.):
- * su comportamiento se obtiene por <b>composición</b> de una o más {@link MovementStrategy}.
- *
- * <p>Ejemplo: la Reina = {@code LinearMovement} + {@code DiagonalMovement}.
- * Una pieza "fantasía" que combine caballo y torre se crea sin ninguna clase nueva.</p>
- *
- * <p>Es inmutable, por lo que puede compartirse entre copias del tablero sin riesgo.</p>
+ * Pieza inmutable; puede compartirse entre copias del tablero.
  */
 public final class Piece {
 

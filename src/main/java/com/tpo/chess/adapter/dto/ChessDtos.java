@@ -3,8 +3,7 @@ package com.tpo.chess.adapter.dto;
 import java.util.List;
 
 /**
- * DTOs expuestos por la API REST. Viven en el adaptador para que el formato de
- * transporte (notación algebraica, strings) no contamine el dominio.
+ * El formato de transporte queda en el adaptador, separado del modelo de dominio.
  */
 public final class ChessDtos {
 

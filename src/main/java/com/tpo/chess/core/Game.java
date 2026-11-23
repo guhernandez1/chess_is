@@ -19,13 +19,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * Fachada del núcleo: orquesta tablero, turnos y validación de reglas.
- *
- * <p>Java puro: no tiene anotaciones de Spring. El adaptador lo instancia mediante
- * {@code @Configuration}/{@code @Bean}.</p>
- *
- * <p>Los métodos públicos son {@code synchronized} porque el adaptador web expone una
- * única partida compartida que puede recibir requests concurrentes.</p>
+ * El acceso al estado se sincroniza porque el adaptador web comparte una partida entre solicitudes concurrentes.
  */
 public class Game {
 
@@ -35,17 +29,14 @@ public class Game {
     private GameStatus status;
     private final List<Move> history = new ArrayList<>();
 
-    /** Partida estándar con un validador por defecto. */
     public Game() {
         this(new RuleValidator());
     }
 
-    /** Partida estándar con el validador inyectado. */
     public Game(RuleValidator validator) {
         this(BoardFactory.createStandardBoard(), Color.WHITE, validator);
     }
 
-    /** Partida desde una posición arbitraria (útil para tests y problemas de ajedrez). */
     public Game(Board board, Color startingTurn, RuleValidator validator) {
         this.validator = Objects.requireNonNull(validator, "validator");
         this.board = Objects.requireNonNull(board, "board").copy();
@@ -110,7 +101,6 @@ public class Game {
         return validator.getLegalMoves(board, pos);
     }
 
-    /** Reinicia a la posición inicial estándar. */
     public synchronized void reset() {
         board = BoardFactory.createStandardBoard();
         currentTurn = Color.WHITE;

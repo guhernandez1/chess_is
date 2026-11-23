@@ -4,9 +4,7 @@ import com.tpo.chess.core.models.Color;
 import com.tpo.chess.core.models.PieceType;
 import com.tpo.chess.core.models.Position;
 
-/**
- * Crea tableros con la disposición inicial estándar del ajedrez.
- */
+
 public final class BoardFactory {
 
     private static final PieceType[] BACK_RANK = {

@@ -9,11 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Movimiento del peón: avance de 1 (o 2 desde su fila inicial) a casillas vacías
- * y captura en diagonal hacia adelante.
- *
- * <p>La dirección se deduce del color de la pieza, por lo que una sola instancia sirve
- * para ambos bandos. Captura al paso queda fuera del alcance del MVP.</p>
+ * La dirección depende del color. No se implementa captura al paso.
  */
 public final class PawnMovement implements MovementStrategy {
 
@@ -49,7 +45,6 @@ public final class PawnMovement implements MovementStrategy {
         return color == Color.WHITE ? 1 : Position.BOARD_SIZE - 2;
     }
 
-    /** Fila en la que un peón de este color corona. */
     public static int promotionRow(Color color) {
         return color == Color.WHITE ? Position.BOARD_SIZE - 1 : 0;
     }

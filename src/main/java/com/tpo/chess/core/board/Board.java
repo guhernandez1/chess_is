@@ -13,10 +13,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * Tablero de 8x8. Solo gestiona la ubicación de las piezas (SRP): no conoce reglas de
- * turnos ni de jaque.
- *
- * <p>Las casillas vacías simplemente no están en el mapa.</p>
+ * Las casillas vacías no se almacenan en el mapa.
  */
 public final class Board {
 
@@ -92,7 +89,7 @@ public final class Board {
 
     /**
      * Copia independiente del tablero. Como {@link Piece} y {@link Position} son inmutables,
-     * una copia superficial del mapa es suficiente y barata (se usa para simular jugadas).
+     * basta con copiar el mapa para simular jugadas sin alterar el original.
      */
     public Board copy() {
         return new Board(grid);

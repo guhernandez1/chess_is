@@ -1,19 +1,13 @@
 package com.tpo.chess.core.models;
 
 /**
- * Casilla del tablero. Inmutable gracias a {@code record}: obtenemos
- * {@code equals/hashCode/toString} gratis, lo que la hace segura como clave de {@code Map}.
- *
- * <p>Convención: {@code row} 0 = fila "1" (lado blanco), {@code col} 0 = columna "a".</p>
- *
- * <p>Se permite construir posiciones fuera del tablero (útil al calcular desplazamientos);
- * usar {@link #isOnBoard()} para validarlas.</p>
+ * Convención: {@code row} 0 corresponde a la fila 1 y {@code col} 0 a la columna a.
+ * Se admiten posiciones fuera del tablero para calcular desplazamientos; validar con {@link #isOnBoard()}.
  */
 public record Position(int row, int col) {
 
     public static final int BOARD_SIZE = 8;
 
-    /** @return {@code true} si la posición está dentro del tablero 8x8. */
     public boolean isOnBoard() {
         return row >= 0 && row < BOARD_SIZE && col >= 0 && col < BOARD_SIZE;
     }

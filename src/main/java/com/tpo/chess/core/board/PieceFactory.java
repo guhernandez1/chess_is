@@ -12,9 +12,7 @@ import com.tpo.chess.core.movement.PawnMovement;
 import java.util.List;
 
 /**
- * Fábrica de piezas estándar: es el ÚNICO lugar donde se decide qué estrategias
- * componen cada tipo de pieza. Agregar una pieza nueva = agregar una combinación aquí,
- * sin tocar {@link Piece} ni crear subclases (Open/Closed).
+ * Centraliza las combinaciones de movimientos de las piezas estándar.
  */
 public final class PieceFactory {
 
