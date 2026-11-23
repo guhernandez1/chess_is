@@ -27,6 +27,15 @@ body {
 .brand-title span { color: var(--text-muted); font-size: 18px; letter-spacing: 0; }
 .brand-subtitle { margin: 5px 0 0; color: var(--text-muted); font-size: 12px; }
 .header-actions { display: flex; gap: 8px; }
+.team-credit {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 3px 16px;
+    max-width: 1100px; margin: 0 auto; padding: 12px 28px 0;
+    color: var(--text); font-size: 12px;
+}
+.team-credit-label {
+    color: var(--accent); font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em;
+}
 .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 6px;
     padding: 9px 15px; min-height: 40px; border: 1px solid var(--border); border-radius: 4px;
@@ -118,6 +127,7 @@ body {
 @media (max-width: 800px) {
     :root { --board-size: min(560px, calc(100vw - 32px)); }
     .app-header { padding: 20px 16px; flex-wrap: wrap; }
+    .team-credit { padding: 12px 16px 0; }
     .layout { grid-template-columns: minmax(0, var(--board-size)); padding: 0 16px 28px; margin-top: 18px; gap: 26px; }
     .sidebar { padding-top: 0; }
     .project-note { margin: 0 16px; }
