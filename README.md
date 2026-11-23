@@ -1,4 +1,4 @@
-# Ajedrez TPO — Java + Spring Boot (Arquitectura Hexagonal)
+# Ajedrez TPO — Java + Spring Boot (Inspiración de Arquitectura Hexagonal)
 
 [![Jugar Online](https://img.shields.io/badge/🎮%20JUGAR%20ONLINE-chess--is.onrender.com-success?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chess-is.onrender.com)
 [![Status](https://img.shields.io/badge/Status-Online%20en%20Render-blue?style=for-the-badge)](https://chess-is.onrender.com)
