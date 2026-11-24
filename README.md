@@ -1,10 +1,15 @@
-# Ajedrez TPO — Java + Spring Boot (Inspiración de Arquitectura Hexagonal)
+# Chess Engine — Java + Spring Boot (Arquitectura Hexagonal)
 
 [![Jugar Online](https://img.shields.io/badge/🎮%20JUGAR%20ONLINE-chess--is.onrender.com-success?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chess-is.onrender.com)
 [![Status](https://img.shields.io/badge/Status-Online%20en%20Render-blue?style=for-the-badge)](https://chess-is.onrender.com)
 
 > ♟️ **Demo en vivo:** Podés jugar directamente desde el navegador ingresando a **[https://chess-is.onrender.com](https://chess-is.onrender.com)**.
 
+Motor de ajedrez desarrollado en **Java 17** con **Arquitectura Hexagonal** (núcleo de dominio 100% desacoplado de frameworks) y un adaptador web REST + UI estática en **Spring Boot**.
+
+## Documentación técnica
+- **Decisiones de diseño (Qué / Por qué / Cuándo se romperían):** [docs/justificacion-diseno.md](docs/justificacion-diseno.md)
+- **Tests del núcleo:** `src/test/java/com/tpo/chess/core/` (JUnit 5 puro, sin contexto de Spring) + verificación arquitectónica automática en `CoreArchitectureTest`.
 ## Requisitos
 - JDK 17+ (no hace falta instalar Maven: se usa el wrapper `mvnw`).
 
